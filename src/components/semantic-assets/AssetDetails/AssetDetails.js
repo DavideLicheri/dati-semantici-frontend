@@ -13,6 +13,7 @@ import getDetailsPropTypes from "./DetailsPropTypes";
 import OntologyMetadata from "./metadata/OntologyMetadata";
 import { routes } from "../../../services/routes";
 import SwaggerUI from "swagger-ui-react";
+import SchemaOnlyLayoutPlugin from "./SchemaUI";
 import BreadCrumbs from "../../common/BreadCrumbs/BreadCrumbs";
 import BREADCRUMBS from "../../../services/BreadCrumbsConst";
 import EndSection from "../../common/EndSection/EndSection";
@@ -115,7 +116,11 @@ const AssetDetails = ({ details }) => {
                                 </div>
                               </div>
                               <hr className="border-black" />
-                              <SwaggerUI url={downloadUrl} />
+                              <SwaggerUI
+                                url={downloadUrl}
+                                plugins={[SchemaOnlyLayoutPlugin]}
+                                layout="SchemaOnlyLayout"
+                              />
                             </div>
                           </div>
                         )}
